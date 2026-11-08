@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F3B7F2E-6A43-4F6E-9D1C-2B8F5F1A7C11}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SupplierPortal</RootNamespace>
+    <AssemblyName>SupplierPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Download.ashx" />
+    <Content Include="NewRequest.aspx" />
+    <Content Include="Request.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="Web.config" />
+    <Content Include="css\site.css" />
+    <Content Include="Templates\Vendor_Form.xlsx" />
+    <Content Include="App_Data\Uploads\.keep" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.aspx.cs"><DependentUpon>Admin.aspx</DependentUpon><SubType>ASPXCodeBehind</SubType></Compile>
+    <Compile Include="Admin.aspx.designer.cs"><DependentUpon>Admin.aspx</DependentUpon></Compile>
+    <Compile Include="Default.aspx.cs"><DependentUpon>Default.aspx</DependentUpon><SubType>ASPXCodeBehind</SubType></Compile>
+    <Compile Include="Default.aspx.designer.cs"><DependentUpon>Default.aspx</DependentUpon></Compile>
+    <Compile Include="Download.ashx.cs"><DependentUpon>Download.ashx</DependentUpon></Compile>
+    <Compile Include="NewRequest.aspx.cs"><DependentUpon>NewRequest.aspx</DependentUpon><SubType>ASPXCodeBehind</SubType></Compile>
+    <Compile Include="NewRequest.aspx.designer.cs"><DependentUpon>NewRequest.aspx</DependentUpon></Compile>
+    <Compile Include="Request.aspx.cs"><DependentUpon>Request.aspx</DependentUpon><SubType>ASPXCodeBehind</SubType></Compile>
+    <Compile Include="Request.aspx.designer.cs"><DependentUpon>Request.aspx</DependentUpon></Compile>
+    <Compile Include="Site.Master.cs"><DependentUpon>Site.Master</DependentUpon><SubType>ASPXCodeBehind</SubType></Compile>
+    <Compile Include="Site.Master.designer.cs"><DependentUpon>Site.Master</DependentUpon></Compile>
+    <Compile Include="lib\BasePage.cs" />
+    <Compile Include="lib\Config.cs" />
+    <Compile Include="lib\CurrentUser.cs" />
+    <Compile Include="lib\Db.cs" />
+    <Compile Include="lib\FormUpload.cs" />
+    <Compile Include="lib\Requests.cs" />
+    <Compile Include="lib\Settings.cs" />
+    <Compile Include="lib\UploadStore.cs" />
+    <Compile Include="lib\VendorForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
