@@ -1,0 +1,9 @@
+bin/
+obj/
+packages/
+.vs/
+*.user
+*.suo
+App_Data/Uploads/*
+!App_Data/Uploads/.keep
+Web.*.local.config
