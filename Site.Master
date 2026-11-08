@@ -1,0 +1,26 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="SupplierPortal.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Supplier Portal</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+        <header class="top">
+            <span class="brand">Supplier Portal</span>
+            <nav>
+                <a href="<%: ResolveUrl("~/Default.aspx") %>">My requests</a>
+                <asp:HyperLink ID="lnkNew" runat="server" NavigateUrl="~/NewRequest.aspx">New supplier</asp:HyperLink>
+                <asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="~/Admin.aspx">Admin</asp:HyperLink>
+            </nav>
+            <span class="who"><asp:Literal ID="litUser" runat="server" /></span>
+        </header>
+        <main>
+            <asp:ContentPlaceHolder ID="Main" runat="server" />
+        </main>
+    </form>
+</body>
+</html>
